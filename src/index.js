@@ -37,9 +37,14 @@ const oldBooks = (year) => {
     .map(book => book.name);
 };
 
-const authorWith3DotsOnName = () => {
-  // escreva seu código aqui
-};
+function authorWith3DotsOnName() {
+  return books.find(book => {
+    const authorName = book.author.name;
+    const initials = authorName.split(' ').filter(word => word.endsWith('.'));
+    return initials.length >= 3;
+  }).name;
+}
+
 
 module.exports = {
   fantasyOrScienceFiction,
