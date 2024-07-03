@@ -9,7 +9,11 @@ const fantasyOrScienceFiction = () => {
 
 
 const oldBooksOrdered = (year) => {
-  // escreva seu código aqui
+  const sixtyYearsDiff = year -60;
+  
+  return books
+  .filter((book) => book.releaseYear <= sixtyYearsDiff)
+  .sort((a,b) => a.releaseYear - b.releaseYear);
 };
 
 const booksByAuthorBirthYear = (birthYear) => {
